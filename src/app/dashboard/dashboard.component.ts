@@ -1,0 +1,38 @@
+import { Component, OnInit } from '@angular/core';
+
+import { UsersService, User } from '../users.service';
+import { UsersCacheService } from '../users-cache.service';
+
+@Component({
+  templateUrl: './dashboard.component.html',
+  styleUrls: ['./dashboard.component.scss']
+})
+export class DashboardComponent implements OnInit {
+
+  constructor(
+    private usersService: UsersService,
+    private usersCache: UsersCacheService,
+  ) { }
+
+  ngOnInit(): void {
+    if (this.usersCache.users.length <= 0) {
+      this.getNextPage();
+    }
+  }
+
+  getNextPage() {
+    this.usersService.getUsersPage(this.usersCache.pagesLoaded++)
+      .subscribe(users => {
+        this.usersCache.users.push(...users);
+      });
+  }
+
+  get users() {
+    return this.usersCache.users;
+  }
+
+  get usersCount() {
+    return this.users?.length ?? 0;
+  }
+
+}

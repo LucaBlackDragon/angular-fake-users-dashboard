@@ -1,0 +1,48 @@
+<div fxLayout="column" fxFill>
+  <app-main-toolbar></app-main-toolbar>
+  <div *ngIf="!!user" fxLayout="column" fxFlex="grow">
+    <div fxFlex="20px"></div>
+    <div fxFlex="auto" fxLayout="row">
+      <div fxFlex="20px"></div>
+      <div fxFlex="100px">
+        <img [src]="user.picture.large" [alt]="'immagine di ' + user.name.first + ' ' + user.name.last" class="avatar">
+      </div>
+      <div fxFlex="20px"></div>
+      <div fxFlex="auto">
+        <div fxFlex="grow" fxLayout="column" fxLayoutAlign="space-evenly start">
+          <h1>{{user.name.title}} {{user.name.first}} {{user.name.last}}</h1>
+          <h3>{{user.email}}</h3>
+        </div>
+      </div>
+      <div fxFlex="20px"></div>
+    </div>
+    <div fxFlex="10px"></div>
+    <div fxLayout="row">
+      <div fxFlex="20px"></div>
+      <div fxFlex="grow">
+        <p><b>Anno di iscrizione:</b> {{user.registered.date}}</p>
+        <p><b>UUID Utente:</b> {{user.login.uuid}}</p>
+        <p><b>Contatto telefonico:</b> {{user.phone}}</p>
+        <p>
+          <b>Indirizzo:</b><br>
+          {{user.location.street.name}} {{user.location.street.number}}<br>
+          {{user.location.postcode}} {{user.location.city}}<br>
+          {{user.location.country}}
+        </p>
+      </div>
+      <div fxFlex="20px"></div>
+    </div>
+    <div fxFlex="grow" style="background-color: red;">
+      <google-map
+        height="100%"
+        width="100%"
+        [center]="userPosition"
+        [zoom]="12"
+      >
+        <map-marker
+          [position]="userPosition"
+        ></map-marker>
+      </google-map>
+    </div>
+  </div>
+</div>
