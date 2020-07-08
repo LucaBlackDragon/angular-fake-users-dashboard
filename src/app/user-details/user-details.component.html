@@ -1,5 +1,6 @@
 <div fxLayout="column" fxFill>
   <app-main-toolbar></app-main-toolbar>
+  <app-errorpanel *ngIf="error" [error]="error" fxFlex="grow"></app-errorpanel>
   <div *ngIf="!!user" fxLayout="column" fxFlex="grow">
     <div fxFlex="20px"></div>
     <div fxFlex="auto" fxLayout="row">
@@ -32,7 +33,7 @@
       </div>
       <div fxFlex="20px"></div>
     </div>
-    <div fxFlex="grow" style="background-color: red;">
+    <div fxFlex="grow">
       <google-map
         height="100%"
         width="100%"

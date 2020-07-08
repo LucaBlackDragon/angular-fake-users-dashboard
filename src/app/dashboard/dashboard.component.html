@@ -1,15 +1,18 @@
-<app-main-toolbar [showNavigationButtons]="false"></app-main-toolbar>
-<div fxLayout="column" class="spaced">
-  <div *ngIf="usersCount > 0" fxLayout="row wrap">
-    <div *ngFor="let user of users" fxFlex="auto 1 auto" class="spaced">
-      <button mat-stroked-button routerLink="/users/{{ user.id }}">
-        {{ user.name.first }} {{ user.name.last }}
+<div fxLayout="column" fxFill>
+  <app-main-toolbar [showNavigationButtons]="false"></app-main-toolbar>
+  <app-errorpanel *ngIf="error" [error]="error" fxFlex="grow"></app-errorpanel>
+  <div fxLayout="column" class="spaced">
+    <div *ngIf="usersCount > 0" fxLayout="row wrap">
+      <div *ngFor="let user of users" fxFlex="auto 1 auto" class="spaced">
+        <button mat-stroked-button routerLink="/users/{{ user.id }}">
+          {{ user.name.first }} {{ user.name.last }}
+        </button>
+      </div>
+    </div>
+    <div *ngIf="usersCount > 0" fxLayout="row" fxLayoutAlign="center" class="spaced">
+      <button mat-button color="accent" (click)="getNextPage()">
+        Carica altri utenti
       </button>
     </div>
-  </div>
-  <div fxLayout="row" fxLayoutAlign="center" class="spaced">
-    <button mat-button color="accent" (click)="getNextPage()">
-      Carica altri utenti
-    </button>
   </div>
 </div>

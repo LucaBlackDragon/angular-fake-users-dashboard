@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { UsersService, User } from '../users.service';
+import { UsersService, User, isError } from '../users.service';
 
 @Component({
   templateUrl: './user-details.component.html',
@@ -10,6 +10,7 @@ import { UsersService, User } from '../users.service';
 export class UserDetailsComponent implements OnInit {
 
   user: User;
+  error: Error;
 
   constructor(
     private route: ActivatedRoute,
@@ -21,8 +22,14 @@ export class UserDetailsComponent implements OnInit {
       .subscribe(user => this.initUserData(user));
   }
 
-  initUserData(user: User) {
+  initUserData(user: User|Error) {
+    if (isError(user)) {
+      console.error(user);
+      this.error = user;
+      return;
+    }
     this.user = user;
+    return;
   }
 
   get userPosition(): google.maps.LatLngLiteral {

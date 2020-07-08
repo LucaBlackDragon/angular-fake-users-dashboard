@@ -11,13 +11,15 @@ import { MaterialModule } from './material/material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MainToolbarComponent } from './main-toolbar/main-toolbar.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { ErrorpanelComponent } from './errorpanel/errorpanel.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     UserDetailsComponent,
-    MainToolbarComponent
+    MainToolbarComponent,
+    ErrorpanelComponent
   ],
   imports: [
     BrowserModule,

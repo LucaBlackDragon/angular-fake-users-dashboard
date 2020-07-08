@@ -9,29 +9,12 @@
 // Be sure that you only ever include this mixin once!
 @include mat-core();
 
-// Define the palettes for your theme using the Material Design palettes available in palette.scss
-// (imported above). For each palette, you can optionally specify a default, lighter, and darker
-// hue. Available color palettes: https://material.io/design/color/
-$anagrafica-dipendenti-primary: mat-palette($mat-deep-purple, 600, 400, 800);
-$anagrafica-dipendenti-accent: mat-palette($mat-deep-orange, A400, A200, A700);
-
-// The warn palette is optional (defaults to red).
-$anagrafica-dipendenti-warn: mat-palette($mat-red, A900);
-
-// Create the theme object. A theme consists of configurations for individual
-// theming systems such as "color" or "typography".
-$anagrafica-dipendenti-theme: mat-light-theme((
-  color: (
-    primary: $anagrafica-dipendenti-primary,
-    accent: $anagrafica-dipendenti-accent,
-    warn: $anagrafica-dipendenti-warn,
-  )
-));
+@import './palette.scss';
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
-@include angular-material-theme($anagrafica-dipendenti-theme);
+@include angular-material-theme($app-theme);// Export theme colors
 
 /* You can add global styles to this file, and also import other style files */
 

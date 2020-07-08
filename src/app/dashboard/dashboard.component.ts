@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { UsersService, User } from '../users.service';
+import { UsersService, User, isError } from '../users.service';
 import { UsersCacheService } from '../users-cache.service';
 
 @Component({
@@ -8,6 +8,8 @@ import { UsersCacheService } from '../users-cache.service';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit {
+
+  error: Error;
 
   constructor(
     private usersService: UsersService,
@@ -21,8 +23,15 @@ export class DashboardComponent implements OnInit {
   }
 
   getNextPage() {
-    this.usersService.getUsersPage(this.usersCache.pagesLoaded++)
+    this.error = undefined;
+    this.usersService.getUsersPage(this.usersCache.pagesLoaded)
       .subscribe(users => {
+        if (isError(users)) {
+          this.error = users;
+          console.error(users);
+          return;
+        }
+        this.usersCache.pagesLoaded++;
         this.usersCache.users.push(...users);
       });
   }

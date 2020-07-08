@@ -1,0 +1,14 @@
+@import '../../palette.scss';
+
+.error {
+  margin: 0;
+  color: $app-warn-color;
+  text-align: center;
+}
+.error-icon {
+  $size: 200px;
+  @extend .error;
+  font-size: $size;
+  width: $size;
+  height: $size;
+}
