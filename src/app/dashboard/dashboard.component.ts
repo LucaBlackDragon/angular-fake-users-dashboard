@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 import { UsersService, User, isError } from '../users.service';
 import { UsersCacheService } from '../users-cache.service';
@@ -10,6 +11,7 @@ import { UsersCacheService } from '../users-cache.service';
 export class DashboardComponent implements OnInit {
 
   error: Error;
+  myControl = new FormControl();
 
   constructor(
     private usersService: UsersService,
@@ -42,6 +44,10 @@ export class DashboardComponent implements OnInit {
 
   get usersCount() {
     return this.users?.length ?? 0;
+  }
+
+  autocompleteDisplayFn(user: User) {
+    return user ? `${user.name.first} ${user.name.last}` : '';
   }
 
 }
