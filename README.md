@@ -1,27 +1,29 @@
-# AnagraficaDipendenti
+# Anagrafica Dipendenti
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+Applicazione di esempio per il corso tenuto in Pluservice a luglio 2020.
+
+Progetto generato con [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
+
+> **Attenzione:**
+> 
+> Per funzionare, la dashboard ha bisogno della API degli utenti, disponibile in questo repository:
+>
+> https://github.com/LucaBlackDragon/fake-users-api
+
+## Installazione
+
+1. clonare o scaricare il repository
+2. navigare nella cartella in cui è stato clonato/scaricato
+3. eseguire il comando `npm install` per installare le dipendenze
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Utilizzare `npm start` per avviare il server di sviluppo, disponibile su `http://localhost:4200/`. L'app si aggiornerà automaticamente ad ogni modifica dei file sorgente.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+> **Attenzione:**
+> 
+> Per funzionare, la dashboard ha bisogno della API degli utenti, disponibile in questo repository:
+>
+> https://github.com/LucaBlackDragon/fake-users-api
+>
+> La dashboard ipotizza che la API degli utenti sia disponibile all'indirizzo http://localhost:3000
