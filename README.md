@@ -4,12 +4,6 @@ Applicazione di esempio per il corso tenuto in Pluservice a luglio 2020.
 
 Progetto generato con [Angular CLI](https://github.com/angular/angular-cli) version 10.0.1.
 
-> **Attenzione:**
-> 
-> Per funzionare, la dashboard ha bisogno della API degli utenti, disponibile in questo repository:
->
-> https://github.com/LucaBlackDragon/fake-users-api
-
 ## Installazione
 
 1. clonare o scaricare il repository
