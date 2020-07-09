@@ -18,6 +18,6 @@ Utilizzare `npm start` per avviare il server di sviluppo, disponibile su `http:/
 > 
 > Per funzionare, la dashboard ha bisogno della API degli utenti, disponibile in questo repository:
 >
-> https://github.com/LucaBlackDragon/fake-users-api
+> https://github.com/LucaBlackDragon/angular-fake-users-api
 >
 > La dashboard ipotizza che la API degli utenti sia disponibile all'indirizzo http://localhost:3000
